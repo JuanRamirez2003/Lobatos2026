@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registro de Lobatos</title>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Sidebar -->
 <div class="sidebar">
   <h2>Manada Scout</h2>
   <ul>
@@ -25,16 +21,14 @@
   </ul>
 </div>
 
-<!-- Contenido principal -->
 <div class="main-content">
   <h1>Registro de Lobatos</h1>
   <button class="btn" id="btnAgregar">+ Nuevo Lobato</button>
 
-  <!-- Tabla de lobatos -->
   <table id="tablaLobatos">
     <thead>
       <tr>
-        <th>Nombre</th>
+        <th>Nombre completo</th>
         <th>Apodo</th>
         <th>Edad</th>
         <th>Sexo</th>
@@ -43,9 +37,7 @@
         <th>Acciones</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- Lobatos se agregan dinámicamente -->
-    </tbody>
+    <tbody></tbody>
   </table>
 </div>
 
@@ -56,8 +48,12 @@
     <h2>Agregar / Editar Lobato</h2>
     <form id="formLobato">
       <div class="form-group">
-        <label>Nombre completo</label>
+        <label>Nombre</label>
         <input type="text" id="nombre" required>
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" id="apellido" required>
       </div>
       <div class="form-group">
         <label>Apodo scout</label>
@@ -85,67 +81,38 @@
       </div>
       <div class="form-group">
         <label>Seisena</label>
-        <input type="text" id="seisena">
+        <select id="seisena">
+          <!-- Se llenará automáticamente con JS -->
+        </select>
       </div>
       <div class="form-group">
         <label>Estado</label>
         <select id="estado">
-          <option value="Activo">Activo</option>
-          <option value="Inactivo">Inactivo</option>
+          <option value="activo">Activo</option>
+          <option value="inactivo">Inactivo</option>
         </select>
       </div>
+
       <h3>Datos familiares</h3>
-      <div class="form-group">
-        <label>Nombre del padre</label>
-        <input type="text" id="padre">
-      </div>
-      <div class="form-group">
-        <label>Nombre de la madre</label>
-        <input type="text" id="madre">
-      </div>
-      <div class="form-group">
-        <label>Teléfono de contacto</label>
-        <input type="tel" id="telefono">
-      </div>
-      <div class="form-group">
-        <label>Email de contacto</label>
-        <input type="email" id="email">
-      </div>
-      <div class="form-group">
-        <label>Dirección</label>
-        <input type="text" id="direccion">
-      </div>
+      <div class="form-group"><label>Nombre del padre</label><input type="text" id="padre"></div>
+      <div class="form-group"><label>Nombre de la madre</label><input type="text" id="madre"></div>
+      <div class="form-group"><label>Teléfono de contacto</label><input type="tel" id="telefono"></div>
+      <div class="form-group"><label>Email de contacto</label><input type="email" id="email"></div>
+      <div class="form-group"><label>Dirección</label><input type="text" id="direccion"></div>
+      <div class="form-group"><label>Contacto de emergencia</label><input type="text" id="contactoEmergencia"></div>
+
       <h3>Datos médicos</h3>
-      <div class="form-group">
-        <label>Alergias</label>
-        <input type="text" id="alergias">
-      </div>
-      <div class="form-group">
-        <label>Medicación</label>
-        <input type="text" id="medicacion">
-      </div>
-      <div class="form-group">
-        <label>Restricciones alimentarias</label>
-        <input type="text" id="restricciones">
-      </div>
-      <div class="form-group">
-        <label>Seguro médico</label>
-        <input type="text" id="seguro">
-      </div>
-      <div class="form-group">
-        <label>Contacto de emergencia</label>
-        <input type="text" id="contactoEmergencia">
-      </div>
+      <div class="form-group"><label>Alergias</label><input type="text" id="alergias"></div>
+      <div class="form-group"><label>Medicación</label><input type="text" id="medicacion"></div>
+      <div class="form-group"><label>Restricciones alimentarias</label><input type="text" id="restricciones"></div>
+      <div class="form-group"><label>Seguro médico</label><input type="text" id="seguro"></div>
+
       <button type="submit" class="btn">Guardar Lobato</button>
     </form>
   </div>
 </div>
 
-<!-- 🔹 Scripts -->
-<!-- Primero Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.28.0/dist/supabase.min.js"></script>
-<!-- Después tu JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="lobatos.js"></script>
-
 </body>
 </html>
